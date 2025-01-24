@@ -34,13 +34,16 @@ def parse_llm_response(response):
     except AttributeError:
         return None
 
-def interact_with_llm(messages):
+def interact_with_llm(messages, action):
     while True:
         user_input = input("[You] Enter a message (or type 'continue' to proceed or 'yes' to accept action): ").strip()
         if user_input.lower() in ['continue', 'yes']:
-            return user_input.lower()
+            return user_input.lower(), action
         messages.append({"content": user_input, "role": "user"})
         response = completion(model="ollama_chat/llama3.2:3b", messages=messages)
         response = response.choices[0].message.content
         messages.append({"content": response, "role": "assistant"})
         print(f"[Llama] {response}")
+
+        # Update action
+        action = parse_llm_response(response)

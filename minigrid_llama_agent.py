@@ -59,15 +59,19 @@ class MinigridLlamaAgent:
                 f"Your mission: {mission}.\n"
                 "Based on the grid, what step should the agent take to get closer to the objective?\n"
                 "Available actions: 'Turn left', 'Turn right', 'Move forward', 'Pickup object', 'Drop object', 'Toggle (open door)', 'Task done'. "
-                "Provide an action and a brief explanation for your choice. Explicitly identify the action (e.g., Action: 'Turn left')."
+                "Provide an action and a brief explanation for your choice. Explicitly identify the action at the end of your message (e.g., Action: 'Turn left')."
             )
             response = query_llm(prompt, self.messages)
             print(f"[Llama Response] {response}")
 
             action = parse_llm_response(response)
+            print(f"\n\nAction: {action}\n\n")
             action_id = self.action_map.get(action)
 
-            user_decision = interact_with_llm(self.messages)
+            user_decision, action = interact_with_llm(self.messages, action)
+            print(f"\n\nAction: {action}\n\n")
+            action_id = self.action_map.get(action)
+
             if user_decision == "yes" and action_id is not None:
                 self.obs, reward, terminated, truncated, _ = self.env.step(action_id)
                 print(f"Action: {action}, Reward: {reward}")
