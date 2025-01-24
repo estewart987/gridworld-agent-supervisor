@@ -1,0 +1,5 @@
+gymnasium
+minigrid
+git+https://github.com/Farama-Foundation/Minigrid.git
+litellm
+numpy
