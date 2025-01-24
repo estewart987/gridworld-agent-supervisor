@@ -62,16 +62,6 @@ python run_minigrid_agent.py
 - **`continue`:** Skip further interaction and move forward.
 - **Any other input:** Engage in conversation with the LLM to ask clarifying questions or provide feedback.
 
-## Repository Structure
-```
-<your-repo-name>/
-├── minigrid_llama_agent.py  # Main class handling agent logic
-├── utils.py                 # Utility functions for LLM interaction and grid description
-├── run_minigrid_agent.py    # Script for running the agent
-├── requirements.txt         # Python dependencies
-└── README.md                # Documentation
-```
-
 ## Future Enhancements
 - Support BabyAI environments.
 - Integrate other LLMs for broader functionality.
