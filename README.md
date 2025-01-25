@@ -78,7 +78,6 @@ You will be prompted to enter a MiniGrid environment from those listed at `https
 - **`continue`:** Skip further interaction and move forward.
 - **Any other input:** Engage in conversation with the LLM to ask clarifying questions or provide feedback.
 
-
 ## Setting Up Llama with Ollama
 #### Prerequisites
 Before proceeding, ensure the following are installed:
