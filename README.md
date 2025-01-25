@@ -1,7 +1,6 @@
 # Gridworld Agent Supervisor
 
-This repository implements a framework for human-in-the-loop interaction with LLM agents in Minigrid environments. The system allows users to interact with an agent embodied in a gridworld environment. For example, users can supervise an agent on difficult tasks or propose new instructions to the agent, making it a useful testbed for human-AI collaboration. By enabling supervision and dynamic interaction, this project provides a valuable tool for studying the dynamics of human-AI collaboration, particularly in tasks requiring sequential decision-making. Researchers can use this framework to refine AI behavior and evaluate the performance of language models in real-time interactive settings.
-
+This repository implements a framework for human-in-the-loop interaction with LLM agents in Minigrid environments. The system allows users to interact with an agent embodied in a gridworld environment. For example, users can supervise an agent on difficult tasks or propose new instructions to the agent, making it a useful testbed for human-AI collaboration.
 <div align="center">
   <img src="assets/minigrid_demo.gif" alt="MiniGrid Environment Demo" />
 </div>
