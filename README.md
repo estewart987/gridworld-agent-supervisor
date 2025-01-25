@@ -1,13 +1,13 @@
 # Gridworld Agent Supervisor
 
-This repository implements a framework for human-in-the-loop interaction with LLM agents in Minigrid environments. The system allows users to interact with an agent embodied in a gridworld environment. For example, users can supervise an agent on difficult tasks or propose new instructions to the agent, making it a useful testbed for human-AI collaboration.
+This repository implements a framework for human-in-the-loop interaction with LLM agents in [Minigrid environments](https://minigrid.farama.org/index.html). The system allows users to interact with an agent embodied in a gridworld environment. For example, users can supervise an agent on difficult tasks or propose new instructions to the agent, making it a useful testbed for human-AI collaboration.
 <div align="center">
   <img src="assets/minigrid_demo.gif" alt="MiniGrid Environment Demo" />
 </div>
 
 ## Features
 - **Interactive Gridworld Environment:** Navigate any supported Minigrid environment (e.g., `MiniGrid-GoToDoor-8x8-v0`) rendered in real-time.
-- **LiteLLM Integration:** Swap to any LLM provider supported by LiteLLM (Ollama + LLama 3.2:3B by default)
+- **LiteLLM Integration:** Swap to any LLM provider supported by [LiteLLM](https://www.litellm.ai/) ([Ollama](https://ollama.com/) + [LLama 3.2:3B](https://huggingface.co/meta-llama/Llama-3.2-3B) by default)
 - **Human-in-the-loop:** The LLM will interpret the grid descriptions, generate actions, and provide reasoning for its choices. Interact dynamically with the LLM to ask clarifying questions, provide corrections, or accept/reject the suggested actions.
 - **Runs on your laptop!:** Tested on a 2023 Macbook Pro with an M3 Pro chip and 36 GB of memory.
 
