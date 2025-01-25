@@ -93,7 +93,7 @@ class MinigridLlamaAgent:
                 "You are in a gridworld. Each tile is described below with its index.\n"
                 f"# Grid\n```python\n{grid_description}\n```\n"
                 f"Your mission: {mission}.\n"
-                "Based on the grid, what step should the agent take to get closer to the objective?\n"
+                "The agent is represented by 'the red agent.' Based on the grid, what step should the agent take to get closer to the objective?\n"
                 "Available actions: 'Turn left', 'Turn right', 'Move forward', 'Pickup object', 'Drop object', 'Toggle (open door)', 'Task done'. "
                 "Provide an action and a brief explanation for your choice. Explicitly identify the action at the end of your message (e.g., Action: 'Turn left')."
             )
@@ -103,12 +103,10 @@ class MinigridLlamaAgent:
 
             # Parse the action from the LLM's response
             action = parse_llm_response(response)
-            print(f"\n\nAction: {action}\n\n")
             action_id = self.action_map.get(action)
 
             # Respond to LLM's message and execute action if correct
             user_decision, action = interact_with_llm(self.messages, action)
-            print(f"\n\nAction: {action}\n\n")
             action_id = self.action_map.get(action)
 
             if user_decision == "yes" and action_id is not None:
